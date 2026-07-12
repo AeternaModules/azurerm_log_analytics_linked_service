@@ -1,3 +1,7 @@
+output "log_analytics_linked_services_id" {
+  description = "Map of id values across all log_analytics_linked_services, keyed the same as var.log_analytics_linked_services"
+  value       = { for k, v in azurerm_log_analytics_linked_service.log_analytics_linked_services : k => v.id }
+}
 output "log_analytics_linked_services_name" {
   description = "Map of name values across all log_analytics_linked_services, keyed the same as var.log_analytics_linked_services"
   value       = { for k, v in azurerm_log_analytics_linked_service.log_analytics_linked_services : k => v.name }
